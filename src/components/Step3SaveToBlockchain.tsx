@@ -6,7 +6,7 @@ import { Shield, Info, Loader2, CheckCircle2, ExternalLink } from "lucide-react"
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import badgeIcon from "@/assets/badge-icon.png";
-import { useAccount, useSendTransaction, useWaitForTransactionReceipt } from "wagmi";
+import { useAccount, useSendTransaction, useWaitForTransactionReceipt, useChainId, useSwitchChain } from "wagmi";
 import { supabase } from "@/integrations/supabase/client";
 import { parseEther, encodeFunctionData, keccak256, toHex } from "viem";
 import { monadTestnet } from "@/lib/wagmi-config";
@@ -21,8 +21,12 @@ export function Step3SaveToBlockchain({ canProceed }: Step3Props) {
   const [generateZK, setGenerateZK] = useState(false);
   const [success, setSuccess] = useState(false);
   const [transactionHash, setTransactionHash] = useState<string>("");
+  const [attempted, setAttempted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const { toast } = useToast();
   const { address } = useAccount();
+  const chainId = useChainId();
+  const { switchChain } = useSwitchChain();
   const { data: hash, isPending, sendTransaction } = useSendTransaction();
   const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({
     hash,
@@ -63,6 +67,21 @@ export function Step3SaveToBlockchain({ canProceed }: Step3Props) {
         description: "Please connect your wallet first",
       });
       return;
+    }
+
+    setAttempted(true);
+    setErrorMsg(null);
+
+    // Ensure correct network
+    if (chainId !== monadTestnet.id) {
+      try {
+        await switchChain({ chainId: monadTestnet.id });
+        toast({ title: "Network Switched", description: `Switched to ${monadTestnet.name}` });
+      } catch (e: any) {
+        setErrorMsg("Please switch your wallet to Monad testnet and try again.");
+        toast({ variant: "destructive", title: "Wrong Network", description: "Switch to Monad testnet to continue." });
+        return;
+      }
     }
 
     try {
@@ -120,6 +139,7 @@ export function Step3SaveToBlockchain({ canProceed }: Step3Props) {
 
     } catch (error: any) {
       console.error('Error saving to blockchain:', error);
+      setErrorMsg(error?.message || 'Failed to save credentials');
       toast({
         variant: "destructive",
         title: "Error",
@@ -283,6 +303,66 @@ export function Step3SaveToBlockchain({ canProceed }: Step3Props) {
               </div>
             </div>
           </div>
+
+          {/* Transaction Steps */}
+          <section className="space-y-3">
+            <p className="font-semibold text-sm">Transaction status</p>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 text-sm">
+                {(attempted || isPending || hash || isConfirming || success) ? (
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                ) : (
+                  <Loader2 className="h-4 w-4 text-muted-foreground" />
+                )}
+                Prepare data
+              </li>
+              <li className="flex items-center gap-2 text-sm">
+                {isPending ? (
+                  <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                ) : attempted ? (
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                ) : (
+                  <Loader2 className="h-4 w-4 text-muted-foreground" />
+                )}
+                Confirm in wallet
+              </li>
+              <li className="flex items-center gap-2 text-sm">
+                {hash ? (
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                ) : (
+                  <Loader2 className="h-4 w-4 text-muted-foreground" />
+                )}
+                Submitted {hash && (
+                  <button onClick={() => window.open(`${monadTestnet.blockExplorers.default.url}/tx/${hash}`, '_blank')} className="text-primary underline underline-offset-2 ml-2 flex items-center">
+                    View on explorer <ExternalLink className="h-3 w-3 ml-1" />
+                  </button>
+                )}
+              </li>
+              <li className="flex items-center gap-2 text-sm">
+                {isConfirming ? (
+                  <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                ) : hash ? (
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                ) : (
+                  <Loader2 className="h-4 w-4 text-muted-foreground" />
+                )}
+                Waiting for confirmations
+              </li>
+              <li className="flex items-center gap-2 text-sm">
+                {success ? (
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
+                ) : (
+                  <Loader2 className="h-4 w-4 text-muted-foreground" />
+                )}
+                Confirmed
+              </li>
+            </ul>
+            {errorMsg && (
+              <div className="text-destructive text-sm bg-destructive/10 border border-destructive/30 rounded-md p-2">
+                {errorMsg}
+              </div>
+            )}
+          </section>
 
           <Button
             onClick={handleSaveToBlockchain}
