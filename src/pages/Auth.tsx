@@ -29,7 +29,7 @@ export default function Auth() {
   }, [navigate]);
 
   const handleDemoLogin = async () => {
-    setEmail("demo@monad.passport");
+    setEmail("demo@airdrop.io");
     setPassword("demo123456");
     setIsLogin(true);
     
@@ -105,7 +105,7 @@ export default function Auth() {
         <div className="text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Shield className="h-10 w-10 text-primary" />
-            <span className="text-2xl font-bold glow-text">monad.passport</span>
+            <span className="text-2xl font-bold glow-text">Airdrop</span>
           </div>
           <p className="text-muted-foreground">
             {isLogin ? "Welcome back" : "Create your account"}

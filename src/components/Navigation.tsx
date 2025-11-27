@@ -8,7 +8,7 @@ export const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/")}>
-          <span className="text-lg font-semibold tracking-tight">monad.passport</span>
+          <span className="text-lg font-semibold tracking-tight">Airdrop</span>
         </div>
 
         <div className="hidden md:flex items-center gap-8">

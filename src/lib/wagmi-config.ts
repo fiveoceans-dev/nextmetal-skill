@@ -57,7 +57,7 @@ export const config = createConfig({
     ...(projectId ? [walletConnect({
       projectId,
       metadata: {
-        name: 'monad.passport',
+        name: 'Airdrop',
         description: 'Verifiable League of Legends credentials on Monad',
         url: window.location.origin,
         icons: [window.location.origin + '/favicon.ico'],
