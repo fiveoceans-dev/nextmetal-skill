@@ -2,9 +2,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import heroBg from "@/assets/lol-hero-bg.png";
+import { useState, useEffect } from "react";
+import { HeroSkeleton } from "@/components/HeroSkeleton";
 
 export const HeroSection = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) return <HeroSkeleton />;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">

@@ -1,4 +1,34 @@
+import { Skeleton } from "@/components/ui/skeleton";
+import { useState, useEffect } from "react";
+
 export const VennDiagramSection = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <section id="discover" className="py-40 relative overflow-hidden border-b border-border">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-24">
+              <Skeleton className="h-20 w-96 mx-auto mb-8" />
+              <Skeleton className="h-8 w-[600px] mx-auto" />
+            </div>
+            <div className="relative h-[600px] flex items-center justify-center">
+              <Skeleton className="absolute top-0 left-1/2 transform -translate-x-1/2 w-80 h-80 rounded-full" />
+              <Skeleton className="absolute bottom-0 left-[35%] transform -translate-x-1/2 w-80 h-80 rounded-full" />
+              <Skeleton className="absolute bottom-0 right-[35%] transform translate-x-1/2 w-80 h-80 rounded-full" />
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="discover" className="py-40 relative overflow-hidden border-b border-border">
       <div className="container mx-auto px-6 relative z-10">
@@ -13,30 +43,30 @@ export const VennDiagramSection = () => {
           <div className="relative h-[600px] flex items-center justify-center">
             {/* 12 o'clock - $POKER */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 animate-fade-in-up">
-              <div className="w-80 h-80 rounded-full border border-foreground/30 flex items-center justify-center hover:border-foreground/50 transition-all">
+              <div className="w-80 h-80 rounded-full border border-foreground/20 flex items-center justify-center hover:border-foreground/40 transition-all duration-500 backdrop-blur-sm">
                 <div className="text-center mb-8">
                   <h3 className="text-4xl font-bold mb-3 tracking-tight">$POKER</h3>
-                  <p className="text-base text-muted-foreground px-8">Airdrop for<br/>verified players</p>
+                  <p className="text-base text-muted-foreground px-8 leading-relaxed">Airdrop for<br/>verified players</p>
                 </div>
               </div>
             </div>
 
             {/* 7 o'clock - LoL Players */}
             <div className="absolute bottom-0 left-[35%] transform -translate-x-1/2 -translate-y-4 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              <div className="w-80 h-80 rounded-full border border-foreground/30 flex items-center justify-center hover:border-foreground/50 transition-all">
+              <div className="w-80 h-80 rounded-full border border-foreground/20 flex items-center justify-center hover:border-foreground/40 transition-all duration-500 backdrop-blur-sm">
                 <div className="text-center mt-16">
                   <h3 className="text-3xl font-semibold mb-3">LoL Players</h3>
-                  <p className="text-base text-muted-foreground px-8">Skilled gamers<br/>seeking rewards</p>
+                  <p className="text-base text-muted-foreground px-8 leading-relaxed">Skilled gamers<br/>seeking rewards</p>
                 </div>
               </div>
             </div>
 
             {/* 5 o'clock - Poker Players */}
             <div className="absolute bottom-0 right-[35%] transform translate-x-1/2 -translate-y-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <div className="w-80 h-80 rounded-full border border-foreground/30 flex items-center justify-center hover:border-foreground/50 transition-all">
+              <div className="w-80 h-80 rounded-full border border-foreground/20 flex items-center justify-center hover:border-foreground/40 transition-all duration-500 backdrop-blur-sm">
                 <div className="text-center mt-16">
                   <h3 className="text-3xl font-semibold mb-3">Poker Players</h3>
-                  <p className="text-base text-muted-foreground px-8">Onchain gaming<br/>community</p>
+                  <p className="text-base text-muted-foreground px-8 leading-relaxed">Onchain gaming<br/>community</p>
                 </div>
               </div>
             </div>

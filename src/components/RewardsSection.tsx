@@ -1,6 +1,42 @@
 import { Card } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useState, useEffect } from "react";
 
 export const RewardsSection = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <section id="badges" className="py-40 relative overflow-hidden border-b border-border">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-24">
+              <Skeleton className="h-20 w-[500px] mx-auto mb-8" />
+              <Skeleton className="h-8 w-96 mx-auto" />
+            </div>
+            <div className="grid md:grid-cols-3 gap-10">
+              {[1, 2, 3].map((i) => (
+                <Card key={i} className="minimal-card p-12">
+                  <div className="mb-10">
+                    <Skeleton className="h-24 w-32 mx-auto mb-3" />
+                    <Skeleton className="h-6 w-24 mx-auto" />
+                  </div>
+                  <Skeleton className="h-8 w-40 mx-auto mb-3" />
+                  <Skeleton className="h-6 w-full" />
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="badges" className="py-40 relative overflow-hidden border-b border-border">
       <div className="container mx-auto px-6 relative z-10">
