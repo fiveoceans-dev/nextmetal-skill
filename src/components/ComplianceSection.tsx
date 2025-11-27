@@ -9,7 +9,7 @@ export const ComplianceSection = () => {
 
           <div className="max-w-3xl mx-auto text-sm text-muted-foreground leading-relaxed space-y-6 text-center">
             <p>
-              monad.passport isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+              Airdrop isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
             </p>
             <p>
               This application uses the Riot Games API to verify League of Legends player ranks and achievements. All data is used in compliance with Riot Games' Terms of Service and API Terms.
