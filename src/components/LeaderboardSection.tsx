@@ -1,4 +1,6 @@
 import { Card } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useState, useEffect } from "react";
 
 const leaderboardData = [
   { rank: 1, nickname: "ShadowStrike", tier: "Diamond I", allocation: "5000" },
@@ -9,6 +11,47 @@ const leaderboardData = [
 ];
 
 export const LeaderboardSection = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1400);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <section className="py-40 relative overflow-hidden border-b border-border">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-24">
+              <Skeleton className="h-20 w-96 mx-auto mb-8" />
+              <Skeleton className="h-8 w-[500px] mx-auto" />
+            </div>
+            <Card className="minimal-card p-2">
+              <div className="divide-y divide-border">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div key={i} className="flex items-center justify-between p-8">
+                    <div className="flex items-center gap-8">
+                      <Skeleton className="w-16 h-12" />
+                      <div>
+                        <Skeleton className="h-6 w-40 mb-2" />
+                        <Skeleton className="h-5 w-32" />
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <Skeleton className="h-10 w-24 mb-2" />
+                      <Skeleton className="h-4 w-20" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-40 relative overflow-hidden border-b border-border">
       <div className="container mx-auto px-6 relative z-10">
