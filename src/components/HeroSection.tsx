@@ -20,7 +20,7 @@ export const HeroSection = () => {
           <div className="inline-block mb-4">
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/50 border border-primary/30">
               <Shield className="h-4 w-4 text-primary" />
-              <span className="text-sm text-muted-foreground">Powered by Monad & ZK Proofs</span>
+              <span className="text-sm text-muted-foreground">Powered by PokerNFTs</span>
             </div>
           </div>
 
