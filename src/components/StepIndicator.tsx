@@ -15,20 +15,20 @@ interface StepIndicatorProps {
 
 export function StepIndicator({ steps, currentStep, completedSteps, onStepClick }: StepIndicatorProps) {
   return (
-    <div className="flex items-center justify-between max-w-3xl mx-auto mb-12">
+    <div className="flex items-center justify-between mb-4">
       {steps.map((step, index) => {
         const isCompleted = completedSteps.includes(step.number);
         const isCurrent = currentStep === step.number;
         const isLocked = step.number > currentStep && !isCompleted;
 
         const canClick = isCompleted || isCurrent;
-        
+
         return (
           <div key={step.number} className="flex items-center flex-1">
             <div className="flex flex-col items-center flex-1">
               <div
                 onClick={() => canClick && onStepClick(step.number)}
-                className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all ${
+                className={`w-8 h-8 rounded-full flex items-center justify-center border-2 transition-all text-xs ${
                   isCompleted
                     ? "bg-primary border-primary text-primary-foreground"
                     : isCurrent
@@ -37,23 +37,23 @@ export function StepIndicator({ steps, currentStep, completedSteps, onStepClick 
                 } ${canClick ? "cursor-pointer hover:scale-110" : "cursor-not-allowed"}`}
               >
                 {isCompleted ? (
-                  <CheckCircle2 className="h-6 w-6" />
+                  <CheckCircle2 className="h-4 w-4" />
                 ) : isLocked ? (
-                  <Lock className="h-5 w-5" />
+                  <Lock className="h-3 w-3" />
                 ) : (
                   <span className="font-bold">{step.number}</span>
                 )}
               </div>
-              <div className="mt-3 text-center">
-                <p className={`font-semibold text-sm ${isCurrent ? "text-primary" : "text-foreground"}`}>
+              <div className="mt-2 text-center">
+                <p className={`font-medium text-xs ${isCurrent ? "text-primary" : "text-foreground"}`}>
                   {step.title}
                 </p>
-                <p className="text-xs text-muted-foreground mt-1">{step.description}</p>
+                <p className="text-xs text-muted-foreground mt-0.5">{step.description}</p>
               </div>
             </div>
             {index < steps.length - 1 && (
               <div
-                className={`h-0.5 flex-1 mx-2 mt-[-48px] transition-all ${
+                className={`h-0.5 flex-1 mx-1 mt-[-32px] transition-all ${
                   completedSteps.includes(step.number) ? "bg-primary" : "bg-muted"
                 }`}
               />
