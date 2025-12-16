@@ -12,14 +12,14 @@ export const Navigation = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-10">
-          <a href="#discover" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            How It Works
-          </a>
-          <a href="#badges" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          <a href="#rewards" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Rewards
           </a>
-          <a href="#legal" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            Compliance
+          <a href="#data" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            Data
+          </a>
+          <a href="#datasets" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            Datasets
           </a>
         </div>
 

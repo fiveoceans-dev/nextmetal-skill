@@ -1,5 +1,5 @@
 import { Skeleton } from "@/components/ui/skeleton";
-import { Monitor, Mouse, Clock, Shield } from "lucide-react";
+import { Monitor, Mouse, Clock, Camera, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const DataSkeleton = () => (
@@ -31,18 +31,23 @@ export const DataSection = () => {
   const dataTypes = [
     {
       icon: Monitor,
-      title: "Screen Video",
-      description: "High-quality gameplay footage",
+      title: "Screen video",
+      description: "Crisp captures of your gameplay",
     },
     {
       icon: Mouse,
-      title: "Mouse + Keyboard",
-      description: "Input actions and patterns",
+      title: "Mouse + Keyboard inputs",
+      description: "Every click and key, frame-aligned",
     },
     {
       icon: Clock,
       title: "Timing",
-      description: "Precise action timestamps",
+      description: "Timestamps to sync everything",
+    },
+    {
+      icon: Camera,
+      title: "WebCamera (optional)",
+      description: "Only if you toggle it on",
     },
   ];
 
@@ -58,12 +63,12 @@ export const DataSection = () => {
             What We <span className="text-primary neon-text">Record</span>
           </h2>
           <p className="text-xl text-muted-foreground font-mono">
-            Minimal data. Maximum value.
+            Minimal capture. Maximum signal.
           </p>
         </div>
 
         {/* Data Types Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {dataTypes.map((item, index) => (
             <div
               key={item.title}
@@ -80,14 +85,14 @@ export const DataSection = () => {
         </div>
 
         {/* Control Message */}
-        <div className="cyber-card flex items-center gap-4 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <div className="w-12 h-12 rounded-lg bg-neon-green/10 flex items-center justify-center flex-shrink-0">
+        <div className="cyber-card flex flex-col sm:flex-row items-start sm:items-center gap-4 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="w-12 h-12 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0">
             <Shield className="w-6 h-6 text-primary" />
           </div>
           <div>
             <h4 className="font-orbitron font-semibold text-lg">You're in Control</h4>
             <p className="text-muted-foreground">
-              You decide when to record and when to submit. Your privacy, your choice.
+              No memory. No APIs. You control recording. You decide what to share.
             </p>
           </div>
         </div>

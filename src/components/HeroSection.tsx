@@ -14,40 +14,34 @@ export const HeroSection = () => {
   if (isLoading) return <HeroSkeleton />;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 grid-pattern scanlines">
-      {/* Background effects */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 bg-gradient-to-br from-background via-card to-background">
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-10 left-[-10%] w-[420px] h-[420px] bg-primary/15 rounded-full blur-3xl rotate-6" />
+        <div className="absolute bottom-10 right-[-10%] w-[420px] h-[420px] bg-accent/15 rounded-full blur-3xl -rotate-6" />
+        <div className="absolute inset-0 opacity-30 mix-blend-soft-light bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.04)_0,_rgba(255,255,255,0)_45%)]" />
       </div>
 
-      {/* Content */}
-      <div className="container mx-auto px-4 z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Badge */}
+      <div className="container mx-auto px-6 z-10">
+        <div className="max-w-5xl mx-auto text-center space-y-10">
           <div className="animate-fade-in-up">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm font-mono">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/15 border border-primary/30 rounded-full text-primary text-sm font-mono tracking-widest uppercase">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              NOW IN BETA
+              Field Notes for the Future
             </span>
           </div>
 
-          {/* Headline */}
-          <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <h1 className="font-orbitron text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight">
+          <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
+            <h1 className="font-orbitron text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight">
               AI that learns by
               <br />
               <span className="text-primary neon-text">playing games.</span>
             </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-mono">
+              Play games. Earn <span className="text-accent font-semibold">$METAL</span>. Train AI.
+            </p>
           </div>
 
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in-up font-mono" style={{ animationDelay: '0.2s' }}>
-            Play games. Earn <span className="text-accent font-semibold">$METAL</span>. Help us train Future AI.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
             <Button size="lg" className="cyber-btn text-lg px-8 h-14 pulse-glow">
               <Download className="mr-2 h-5 w-5" />
               Install & Play
@@ -62,29 +56,6 @@ export const HeroSection = () => {
               For Teams & AI Labs
             </Button>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-lg mx-auto pt-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <div className="text-center">
-              <div className="font-orbitron text-3xl md:text-4xl font-bold text-primary">10K+</div>
-              <div className="text-sm text-muted-foreground mt-1">Players</div>
-            </div>
-            <div className="text-center">
-              <div className="font-orbitron text-3xl md:text-4xl font-bold text-secondary">1M+</div>
-              <div className="text-sm text-muted-foreground mt-1">Hours Captured</div>
-            </div>
-            <div className="text-center">
-              <div className="font-orbitron text-3xl md:text-4xl font-bold text-accent">50+</div>
-              <div className="text-sm text-muted-foreground mt-1">Games</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
         </div>
       </div>
     </section>

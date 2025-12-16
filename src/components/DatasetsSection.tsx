@@ -35,7 +35,7 @@ export const DatasetsSection = () => {
       name: "Raw",
       color: "primary",
       features: [
-        "Screen + input aligned",
+        "Screen + input, aligned",
         "Human-limited gameplay",
         "Time-synced streams",
       ],
@@ -46,8 +46,8 @@ export const DatasetsSection = () => {
       color: "secondary",
       features: [
         "Raw + labels",
-        "Game phases & events",
-        "Rich metadata",
+        "Phases & events",
+        "Metadata for training",
       ],
     },
   ];
@@ -57,11 +57,12 @@ export const DatasetsSection = () => {
       <div className="container mx-auto max-w-5xl">
         {/* Header */}
         <div className="text-center mb-16 space-y-4 animate-fade-in-up">
+          <p className="text-sm uppercase tracking-[0.35em] font-mono text-muted-foreground">Datasets · For AI Labs</p>
           <h2 className="font-orbitron text-4xl md:text-5xl font-bold">
-            <span className="text-secondary neon-text-purple">Datasets</span>
+            <span className="text-secondary neon-text-purple">Signals for real AI.</span>
           </h2>
           <p className="text-xl text-muted-foreground font-mono">
-            Training data built for AI
+            Raw or annotated. Your call.
           </p>
         </div>
 
@@ -88,6 +89,11 @@ export const DatasetsSection = () => {
                   </li>
                 ))}
               </ul>
+              <p className="text-muted-foreground text-sm mt-4">
+                {dataset.name === "Raw"
+                  ? "Screen + input, aligned, human-limited."
+                  : "Raw + labels, phases, metadata."}
+              </p>
             </div>
           ))}
         </div>

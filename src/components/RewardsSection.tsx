@@ -12,7 +12,7 @@ export const RewardsSection = () => {
 
   if (isLoading) {
     return (
-      <section id="badges" className="py-40 relative overflow-hidden border-b border-border">
+      <section id="rewards" className="py-32 relative overflow-hidden border-b border-border">
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-24">
@@ -38,43 +38,45 @@ export const RewardsSection = () => {
   }
 
   return (
-    <section id="badges" className="py-40 relative overflow-hidden border-b border-border">
+    <section id="rewards" className="py-32 relative overflow-hidden border-b border-border">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-24 animate-fade-in-up">
-            <h2 className="text-6xl md:text-7xl font-bold mb-8 tracking-tighter">Token Allocation</h2>
-            <p className="text-2xl text-muted-foreground">
-              Prove your rank and claim your share
+          <div className="text-center mb-16 animate-fade-in-up">
+            <p className="text-sm uppercase tracking-[0.35em] font-mono text-muted-foreground mb-4">Rewards · For Players</p>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tighter">Earn $METAL for verified gameplay.</h2>
+            <p className="text-xl text-muted-foreground">
+              Get paid to play. Climb tiers for better splits and merch.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
-            <Card className="minimal-card p-12 text-center animate-fade-in-up">
-              <div className="mb-10">
-                <div className="text-7xl font-bold mb-3">5K</div>
-                <div className="text-base text-muted-foreground tracking-wider uppercase">$POKER</div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="minimal-card p-10 text-left animate-fade-in-up border-2 border-foreground/10">
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground">Tier</span>
+                <div className="px-3 py-1 rounded-full bg-amber-200/40 text-amber-900 text-xs font-semibold">Gold</div>
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Diamond+</h3>
-              <p className="text-base text-muted-foreground">Top tier rewards for elite players</p>
+              <h3 className="text-3xl font-semibold mb-3">Base $METAL rate + swag.</h3>
+              <p className="text-base text-muted-foreground">
+                Verified sessions earn immediate $METAL plus drops from the merch vault.
+              </p>
             </Card>
 
-            <Card className="minimal-card p-12 text-center animate-fade-in-up border-2 border-foreground" style={{ animationDelay: '0.1s' }}>
-              <div className="mb-10">
-                <div className="text-7xl font-bold mb-3">2.5K</div>
-                <div className="text-base text-muted-foreground tracking-wider uppercase">$POKER</div>
+            <Card className="minimal-card p-10 text-left animate-fade-in-up border-2 border-primary/30" style={{ animationDelay: '0.1s' }}>
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground">Tier</span>
+                <div className="px-3 py-1 rounded-full bg-primary/15 text-primary text-xs font-semibold">Platinum</div>
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Platinum</h3>
-              <p className="text-base text-muted-foreground">Solid rewards for dedicated players</p>
+              <h3 className="text-3xl font-semibold mb-3">2× $METAL rate + Swag+.</h3>
+              <p className="text-base text-muted-foreground">
+                Priority missions, double rewards, bespoke drops straight from the studio.
+              </p>
             </Card>
+          </div>
 
-            <Card className="minimal-card p-12 text-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <div className="mb-10">
-                <div className="text-7xl font-bold mb-3">1K</div>
-                <div className="text-base text-muted-foreground tracking-wider uppercase">$POKER</div>
-              </div>
-              <h3 className="text-2xl font-semibold mb-3">Gold & Below</h3>
-              <p className="text-base text-muted-foreground">Entry rewards for all verified players</p>
-            </Card>
+          <div className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <button className="px-8 py-4 text-lg font-semibold rounded-full border border-foreground/20 hover:border-primary hover:text-primary transition-all duration-200 shadow-[0_0_0_1px_hsl(var(--border))]">
+              Join as a Player
+            </button>
           </div>
         </div>
       </div>
