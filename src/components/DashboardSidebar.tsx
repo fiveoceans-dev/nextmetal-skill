@@ -6,7 +6,8 @@ import {
   Trophy,
   Settings,
   LogOut,
-  User
+  User,
+  Gallery
 } from "lucide-react";
 
 interface DashboardSidebarProps {
@@ -19,6 +20,12 @@ const menuItems = [
     label: "Studio",
     icon: Gamepad2,
     path: "/dashboard/studio"
+  },
+  {
+    id: "gallery",
+    label: "Gallery",
+    icon: Gallery,
+    path: "/dashboard/gallery"
   },
   {
     id: "rewards",
