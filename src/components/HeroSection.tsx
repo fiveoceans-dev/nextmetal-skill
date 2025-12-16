@@ -13,7 +13,7 @@ export const HeroSection = () => {
   if (isLoading) return <HeroSkeleton />;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-background via-card to-background">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-background via-card to-background">
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-10 left-[-10%] w-[420px] h-[420px] bg-primary/15 rounded-full blur-3xl rotate-6" />
         <div className="absolute bottom-10 right-[-10%] w-[420px] h-[420px] bg-accent/15 rounded-full blur-3xl -rotate-6" />
@@ -30,6 +30,9 @@ export const HeroSection = () => {
                 <span className="px-6">Play Games. Earn Rewards.</span>
                 <span className="px-6">Play Games. Earn Rewards.</span>
                 <span className="px-6">Play Games. Earn Rewards.</span>
+                <span className="px-6">Play Games. Earn Rewards.</span>
+                <span className="px-6">Play Games. Earn Rewards.</span>
+                <span className="px-6">Play Games. Earn Rewards.</span>
               </div>
             </div>
           </div>
@@ -41,20 +44,20 @@ export const HeroSection = () => {
               <span className="bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">playing games.</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-mono">
-              Play games. Earn <span className="text-primary font-semibold">$METAL</span>. Train AI.
+              Play. Earn <span className="text-primary font-semibold">$METAL</span>. Train AGI.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
             <Button size="lg" className="text-lg px-8 h-14 rounded-full shadow-sm hover:shadow-md">
-              Install & Play
+              For Gamers
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
               className="text-lg px-8 h-14 border-border rounded-full hover:border-foreground/30 hover:bg-foreground/5 hover:text-foreground"
             >
-              For Teams & AI Labs
+              For Developers
             </Button>
           </div>
         </div>

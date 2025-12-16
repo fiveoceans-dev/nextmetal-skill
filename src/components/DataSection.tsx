@@ -3,14 +3,14 @@ import { Monitor, Mouse, Clock, Camera, Shield, Keyboard } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const DataSkeleton = () => (
-  <section className="py-24 px-4 bg-card/50">
+  <section className="py-24 px-4">
     <div className="container mx-auto max-w-5xl">
       <div className="text-center mb-16 space-y-4">
         <Skeleton className="h-10 w-48 mx-auto" />
         <Skeleton className="h-6 w-72 mx-auto" />
       </div>
       <div className="space-y-6">
-        <Skeleton className="h-40 rounded-lg max-w-3xl mx-auto" />
+        <Skeleton className="h-20 rounded-full max-w-md mx-auto" />
         <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {[0, 1].map((i) => (
             <Skeleton key={i} className="h-36 rounded-lg" />
@@ -68,7 +68,7 @@ export const DataSection = () => {
   ];
 
   return (
-    <section id="data" className="py-24 px-4 bg-card/50 relative">
+    <section id="data" className="py-24 px-4">
       
       <div className="container mx-auto max-w-5xl">
         {/* Header */}
@@ -83,12 +83,10 @@ export const DataSection = () => {
 
         {/* Control Message */}
         <div
-          className="rounded-3xl border border-border/70 bg-background/60 backdrop-blur-sm p-6 shadow-sm flex flex-col items-center gap-4 max-w-3xl mx-auto text-center mb-10 animate-fade-in-up"
+          className="flex flex-col items-center gap-3 max-w-2xl mx-auto text-center mb-12 animate-fade-in-up"
           style={{ animationDelay: '0.1s' }}
         >
-          <div className="w-14 h-14 rounded-lg bg-primary/15 flex items-center justify-center flex-shrink-0">
-            <Shield className="w-8 h-8 text-primary" />
-          </div>
+          <Shield className="w-8 h-8 text-primary" />
           <div>
             <h4 className="text-lg font-semibold tracking-tight">You're in Control</h4>
             <p className="text-muted-foreground">
@@ -98,16 +96,14 @@ export const DataSection = () => {
         </div>
 
         {/* Input Data Row */}
-        <div className="grid md:grid-cols-2 gap-6 mb-8 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-10 mb-12 max-w-3xl mx-auto justify-items-center">
           {inputData.map((item, index) => (
             <div
               key={item.title}
-              className="rounded-3xl border border-border/70 bg-background/60 backdrop-blur-sm p-6 shadow-sm text-center animate-fade-in-up"
+              className="w-full max-w-xs text-center animate-fade-in-up"
               style={{ animationDelay: `${(index + 1) * 0.1}s` }}
             >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-primary/10 flex items-center justify-center">
-                <item.icon className="w-8 h-8 text-primary" />
-              </div>
+              <item.icon className="w-8 h-8 text-primary mx-auto mb-3" />
               <h3 className="text-xl font-semibold tracking-tight mb-2">{item.title}</h3>
               <p className="text-muted-foreground">{item.description}</p>
             </div>
@@ -115,16 +111,14 @@ export const DataSection = () => {
         </div>
 
         {/* Capture Data Row */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-10 justify-items-center">
           {captureData.map((item, index) => (
             <div
               key={item.title}
-              className="rounded-3xl border border-border/70 bg-background/60 backdrop-blur-sm p-6 shadow-sm text-center animate-fade-in-up"
+              className="w-full max-w-xs text-center animate-fade-in-up"
               style={{ animationDelay: `${(index + 3) * 0.1}s` }}
             >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-primary/10 flex items-center justify-center">
-                <item.icon className="w-8 h-8 text-primary" />
-              </div>
+              <item.icon className="w-8 h-8 text-primary mx-auto mb-3" />
               <h3 className="text-xl font-semibold tracking-tight mb-2">{item.title}</h3>
               <p className="text-muted-foreground">{item.description}</p>
             </div>

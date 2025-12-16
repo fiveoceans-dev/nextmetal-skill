@@ -42,14 +42,15 @@ export const RewardsSection = () => {
     <section id="rewards" className="py-32 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <p className="text-sm uppercase tracking-[0.35em] font-mono text-muted-foreground mb-4">Rewards · For Players</p>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-[-0.03em]">Earn $METAL for verified gameplay.</h2>
-          </div>
-
-          <p className="text-sm uppercase tracking-[0.35em] font-mono text-muted-foreground text-center mb-8">
+          
+          <div className="text-center mb-16 space-y-4 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.03em]">
+            Earn Rewards
+          </h2>
+          <p className="text-xl text-muted-foreground font-mono">
             Get paid to play. Climb tiers for better splits and merch.
           </p>
+        </div>
 
           <div className="grid md:grid-cols-2 gap-4 justify-items-center max-w-4xl mx-auto">
             <Card
