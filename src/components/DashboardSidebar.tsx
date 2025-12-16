@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useNavigate, useLocation } from "react-router-dom";
 import {
   Gamepad2,
   Trophy,
@@ -12,42 +11,38 @@ import {
 
 interface DashboardSidebarProps {
   className?: string;
+  activeSection: string;
+  onSectionChange: (section: string) => void;
 }
 
 const menuItems = [
   {
     id: "studio",
     label: "Studio",
-    icon: Gamepad2,
-    path: "/dashboard/studio"
+    icon: Gamepad2
   },
   {
     id: "gallery",
     label: "Gallery",
-    icon: Images,
-    path: "/dashboard/gallery"
+    icon: Images
   },
   {
     id: "rewards",
     label: "Rewards",
-    icon: Trophy,
-    path: "/dashboard/rewards"
+    icon: Trophy
   },
   {
     id: "settings",
     label: "Settings",
-    icon: Settings,
-    path: "/dashboard/settings"
+    icon: Settings
   }
 ];
 
-export function DashboardSidebar({ className }: DashboardSidebarProps) {
-  const navigate = useNavigate();
-  const location = useLocation();
+export function DashboardSidebar({ className, activeSection, onSectionChange }: DashboardSidebarProps) {
 
   const handleLogout = async () => {
     // TODO: Implement logout logic
-    navigate("/");
+    window.location.href = "/";
   };
 
   return (
@@ -66,7 +61,7 @@ export function DashboardSidebar({ className }: DashboardSidebarProps) {
         <div className="space-y-2">
           {menuItems.map((item) => {
             const Icon = item.icon;
-            const isActive = location.pathname === item.path;
+            const isActive = activeSection === item.id;
 
             return (
               <Button
@@ -76,7 +71,7 @@ export function DashboardSidebar({ className }: DashboardSidebarProps) {
                   "w-full justify-start gap-3 h-12",
                   isActive && "bg-primary text-primary-foreground"
                 )}
-                onClick={() => navigate(item.path)}
+                onClick={() => onSectionChange(item.id)}
               >
                 <Icon className="h-5 w-5" />
                 {item.label}

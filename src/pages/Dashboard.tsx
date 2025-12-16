@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useLocation, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { User, Session } from "@supabase/supabase-js";
 import { useToast } from "@/hooks/use-toast";
@@ -13,8 +13,8 @@ export default function Dashboard() {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
+  const [activeSection, setActiveSection] = useState("studio");
   const navigate = useNavigate();
-  const location = useLocation();
   const { toast } = useToast();
 
   useEffect(() => {
@@ -57,12 +57,10 @@ export default function Dashboard() {
     return () => subscription.unsubscribe();
   }, [navigate]);
 
-  // Redirect to studio if on base dashboard route
+  // Default to studio section
   useEffect(() => {
-    if (location.pathname === "/dashboard") {
-      navigate("/dashboard/studio", { replace: true });
-    }
-  }, [location.pathname, navigate]);
+    setActiveSection("studio");
+  }, []);
 
   if (loading) {
     return (
@@ -80,7 +78,10 @@ export default function Dashboard() {
     <div className="min-h-screen bg-background flex">
       {/* Sidebar */}
       <div className="w-64 border-r bg-card">
-        <DashboardSidebar />
+        <DashboardSidebar
+          activeSection={activeSection}
+          onSectionChange={setActiveSection}
+        />
       </div>
 
       {/* Main Content */}
@@ -99,12 +100,10 @@ export default function Dashboard() {
 
         {/* Content */}
         <main className="flex-1 p-6">
-          <Routes>
-            <Route path="/studio" element={<DashboardStudio />} />
-            <Route path="/gallery" element={<DashboardGallery />} />
-            <Route path="/rewards" element={<DashboardRewards />} />
-            <Route path="/settings" element={<DashboardSettings />} />
-          </Routes>
+          {activeSection === "studio" && <DashboardStudio />}
+          {activeSection === "gallery" && <DashboardGallery />}
+          {activeSection === "rewards" && <DashboardRewards />}
+          {activeSection === "settings" && <DashboardSettings />}
         </main>
       </div>
     </div>
