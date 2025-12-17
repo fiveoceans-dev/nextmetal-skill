@@ -160,7 +160,6 @@ export default function DashboardStudio({
 
       <div className={`rounded-lg p-4 ${isRecording && recordingSession ? 'bg-blue-50 dark:bg-blue-900/20' : 'bg-gray-50 dark:bg-gray-800'}`}>
         <div className="flex items-center gap-2 mb-4">
-          <Download className={`h-5 w-5 ${isRecording && recordingSession ? 'text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-400'}`} />
           <h3 className={`font-semibold ${isRecording && recordingSession ? 'text-blue-900 dark:text-blue-100' : 'text-gray-700 dark:text-gray-300'}`}>Session Info & Downloads</h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -183,7 +182,7 @@ export default function DashboardStudio({
               <span className="font-medium">Video Format:</span> WebM (VP9)
             </div>
                 <div className="text-sm">
-                  <span className="font-medium">Data Export:</span> ZIP Archive
+                  <span className="font-medium">Data Export:</span> ZIP (Video + JSON + Metadata)
                 </div>
           </div>
         </div>
@@ -192,7 +191,7 @@ export default function DashboardStudio({
             {isRecording && recordingSession ? (
               <>
                 <strong>AI Training Ready:</strong> ZIP archive will auto-download when recording stops.
-                Contains synchronized video (.webm) and input data (.json) with timestamped keyboard/mouse events.
+                Contains synchronized video (.webm), input data (.json), and metadata for AI training.
               </>
             ) : (
               <>

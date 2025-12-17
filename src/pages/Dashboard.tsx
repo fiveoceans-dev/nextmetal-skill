@@ -291,6 +291,41 @@ export default function Dashboard() {
         const inputBlob = new Blob([JSON.stringify(inputData, null, 2)], { type: 'application/json' });
         zip.file(`${newRecordingSession.id}_input.json`, inputBlob);
 
+        // Add metadata file to ZIP
+        const metadata = {
+          session: {
+            id: newRecordingSession.id,
+            startTime: new Date(newRecordingSession.startTime).toISOString(),
+            endTime: new Date().toISOString(),
+            duration: Date.now() - newRecordingSession.startTime,
+            totalInputEvents: newRecordingSession.inputEvents.length
+          },
+          recording: {
+            videoFormat: 'WebM (VP9)',
+            videoCodec: 'VP9',
+            audioEnabled: true,
+            audioSource: 'system',
+            webcamEnabled: true,
+            screenRecordingEnabled: true,
+            inputTrackingEnabled: true
+          },
+          system: {
+            userAgent: navigator.userAgent,
+            platform: navigator.platform,
+            language: navigator.language,
+            timestamp: new Date().toISOString()
+          },
+          ai: {
+            trainingReady: true,
+            dataTypes: ['video', 'audio', 'webcam', 'keyboard', 'mouse'],
+            synchronizationMethod: 'timestamp-based',
+            frameRate: 30,
+            dataFormat: 'WebM + JSON'
+          }
+        };
+        const metadataBlob = new Blob([JSON.stringify(metadata, null, 2)], { type: 'application/json' });
+        zip.file(`${newRecordingSession.id}_metadata.json`, metadataBlob);
+
         // Generate ZIP file and download
         const zipBlob = await zip.generateAsync({ type: 'blob' });
         const zipUrl = URL.createObjectURL(zipBlob);
