@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { User, Session } from "@supabase/supabase-js";
 import { useToast } from "@/hooks/use-toast";
+import JSZip from "jszip";
 import { DashboardSidebar } from "@/components/DashboardSidebar";
 import DashboardStudio from "./DashboardStudio";
 import DashboardGallery from "./DashboardGallery";
@@ -273,30 +274,34 @@ export default function Dashboard() {
         }
       };
 
-      mediaRecorder.onstop = () => {
-        const blob = new Blob(newRecordingSession.recordedChunks, { type: 'video/webm' });
-        const url = URL.createObjectURL(blob);
+      mediaRecorder.onstop = async () => {
+        const zip = new JSZip();
 
-        // Create download link for video with suggested directory path
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `NextMetalStorage/${newRecordingSession.id}.webm`;
-        a.click();
+        // Add video file to ZIP
+        const videoBlob = new Blob(newRecordingSession.recordedChunks, { type: 'video/webm' });
+        zip.file(`${newRecordingSession.id}.webm`, videoBlob);
 
-        // Save input events as JSON
+        // Add input events as JSON to ZIP
         const inputData = {
           sessionId: newRecordingSession.id,
           startTime: newRecordingSession.startTime,
           inputEvents: newRecordingSession.inputEvents,
           duration: Date.now() - newRecordingSession.startTime
         };
-
         const inputBlob = new Blob([JSON.stringify(inputData, null, 2)], { type: 'application/json' });
-        const inputUrl = URL.createObjectURL(inputBlob);
-        const inputA = document.createElement('a');
-        inputA.href = inputUrl;
-        inputA.download = `NextMetalStorage/${newRecordingSession.id}_input.json`;
-        inputA.click();
+        zip.file(`${newRecordingSession.id}_input.json`, inputBlob);
+
+        // Generate ZIP file and download
+        const zipBlob = await zip.generateAsync({ type: 'blob' });
+        const zipUrl = URL.createObjectURL(zipBlob);
+
+        const a = document.createElement('a');
+        a.href = zipUrl;
+        a.download = `NextMetalStorage/${newRecordingSession.id}.zip`;
+        a.click();
+
+        // Clean up URLs
+        URL.revokeObjectURL(zipUrl);
       };
 
       newRecordingSession.mediaRecorder = mediaRecorder;

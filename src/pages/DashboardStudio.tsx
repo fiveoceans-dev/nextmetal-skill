@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { Play, Square, Monitor, Camera, Keyboard, Mouse, Download } from "lucide-react";
+import { Play, Square, Monitor, Camera, Keyboard, Mouse, Download, Volume2 } from "lucide-react";
 
 interface InputEvent {
   timestamp: number;
@@ -105,6 +105,14 @@ export default function DashboardStudio({
               </div>
 
               <div className="text-center">
+                <Volume2 className="h-5 w-5 mx-auto mb-1" />
+                <div className="text-sm">Audio</div>
+                <Badge variant={isRecording ? "default" : "secondary"} className="text-xs">
+                  {isRecording ? "ON" : "Offline"}
+                </Badge>
+              </div>
+
+              <div className="text-center">
                 <Keyboard className="h-5 w-5 mx-auto mb-1" />
                 <div className="text-sm">Input</div>
                 <Badge variant={isRecording ? "default" : "secondary"} className="text-xs">
@@ -124,25 +132,25 @@ export default function DashboardStudio({
         </div>
 
       <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-4">
-        <div className="relative bg-black rounded-lg aspect-[4/1] overflow-hidden">
+        <div className="relative rounded-lg aspect-video overflow-hidden max-w-2xl mx-auto">
             <canvas
               ref={canvasRef}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain bg-black"
               style={{ display: isStreamReady ? 'block' : 'none' }}
             />
             <video
               ref={videoRef}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain bg-black"
               style={{ display: 'none' }}
               muted
             />
 
             {isRecording && (
-              <Badge className="absolute top-2 left-2 bg-red-600">REC</Badge>
+              <Badge className="absolute top-2 left-2 bg-red-600 z-10">REC</Badge>
             )}
 
             {!isStreamReady && (
-              <div className="absolute inset-0 flex items-center justify-center text-white/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-600 text-gray-500 dark:text-gray-400 rounded-lg">
                 <Monitor className="h-8 w-8" />
               </div>
             )}
@@ -150,44 +158,50 @@ export default function DashboardStudio({
         </div>
 
 
-      {isRecording && recordingSession && (
-        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
-          <div className="flex items-center gap-2 mb-4">
-            <Download className="h-5 w-5 text-blue-600 dark:text-blue-400" />
-            <h3 className="font-semibold text-blue-900 dark:text-blue-100">Session Info & Downloads</h3>
-          </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <div className="text-sm">
-                  <span className="font-medium">Session ID:</span> {recordingSession.id}
-                </div>
-                <div className="text-sm">
-                  <span className="font-medium">Start Time:</span> {new Date(recordingSession.startTime).toLocaleTimeString()}
-                </div>
-                <div className="text-sm">
-                  <span className="font-medium">Duration:</span> {Math.floor(duration / 60)}:{(duration % 60).toString().padStart(2, '0')}
-                </div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-sm">
-                  <span className="font-medium">Input Events:</span> {inputEventCount}
-                </div>
-                <div className="text-sm">
-                  <span className="font-medium">Video Format:</span> WebM (VP9)
-                </div>
-                <div className="text-sm">
-                  <span className="font-medium">Data Export:</span> JSON + Video
-                </div>
-              </div>
-            </div>
-            <div className="mt-4 p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-              <p className="text-sm text-blue-800 dark:text-blue-200">
-                <strong>AI Training Ready:</strong> Files will auto-download when recording stops.
-                Video (.webm) contains synchronized screen + webcam. Input data (.json) contains timestamped keyboard/mouse events.
-              </p>
-            </div>
+      <div className={`rounded-lg p-4 ${isRecording && recordingSession ? 'bg-blue-50 dark:bg-blue-900/20' : 'bg-gray-50 dark:bg-gray-800'}`}>
+        <div className="flex items-center gap-2 mb-4">
+          <Download className={`h-5 w-5 ${isRecording && recordingSession ? 'text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-400'}`} />
+          <h3 className={`font-semibold ${isRecording && recordingSession ? 'text-blue-900 dark:text-blue-100' : 'text-gray-700 dark:text-gray-300'}`}>Session Info & Downloads</h3>
         </div>
-      )}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <div className="text-sm">
+              <span className="font-medium">Session ID:</span> {recordingSession ? recordingSession.id : 'Not recording'}
+            </div>
+            <div className="text-sm">
+              <span className="font-medium">Start Time:</span> {recordingSession ? new Date(recordingSession.startTime).toLocaleTimeString() : '--:--:--'}
+            </div>
+            <div className="text-sm">
+              <span className="font-medium">Duration:</span> {isRecording ? `${Math.floor(duration / 60)}:${(duration % 60).toString().padStart(2, '0')}` : '0:00'}
+            </div>
+          </div>
+          <div className="space-y-2">
+            <div className="text-sm">
+              <span className="font-medium">Input Events:</span> {isRecording ? inputEventCount : 0}
+            </div>
+            <div className="text-sm">
+              <span className="font-medium">Video Format:</span> WebM (VP9)
+            </div>
+                <div className="text-sm">
+                  <span className="font-medium">Data Export:</span> ZIP Archive
+                </div>
+          </div>
+        </div>
+        <div className={`mt-4 p-3 rounded-lg ${isRecording && recordingSession ? 'bg-blue-100 dark:bg-blue-900/30' : 'bg-gray-100 dark:bg-gray-700'}`}>
+          <p className={`text-sm ${isRecording && recordingSession ? 'text-blue-800 dark:text-blue-200' : 'text-gray-600 dark:text-gray-400'}`}>
+            {isRecording && recordingSession ? (
+              <>
+                <strong>AI Training Ready:</strong> ZIP archive will auto-download when recording stops.
+                Contains synchronized video (.webm) and input data (.json) with timestamped keyboard/mouse events.
+              </>
+            ) : (
+              <>
+                <strong>Ready to Record:</strong> Start recording to capture synchronized video and input data for AI training.
+              </>
+            )}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
