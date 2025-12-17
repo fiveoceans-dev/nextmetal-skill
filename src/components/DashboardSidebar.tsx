@@ -7,6 +7,7 @@ import {
   LogOut,
   Images
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface DashboardSidebarProps {
   className?: string;
@@ -47,12 +48,14 @@ export function DashboardSidebar({ className, activeSection, onSectionChange }: 
   return (
     <div className={cn("flex flex-col h-full bg-slate-50 dark:bg-slate-900", className)}>
       <div className="p-6 bg-slate-100 dark:bg-slate-800">
-        <div className="flex items-center gap-3">
-          <img src="/logo.svg" alt="NextMetal logo" className="h-8 w-8" />
-          <div>
-            <h3 className="font-semibold text-sm">Next Metal</h3>
-            <p className="text-xs text-muted-foreground">Dashboard</p>
-          </div>
+        <div className="flex flex-col">
+          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <img src="/logo.svg" alt="NextMetal logo" className="h-8 w-8" />
+            <span className="font-semibold text-sm">Next Metal</span>
+          </Link>
+          <span className="text-xs text-muted-foreground self-end mt-1 pr-0.5">
+            Dashboard
+          </span>
         </div>
       </div>
 

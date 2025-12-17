@@ -66,7 +66,7 @@ export const DatasetsSection = () => {
         </div>
 
         {/* Dataset Cards */}
-        <div className="grid md:grid-cols-2 gap-4 justify-items-center mb-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-[repeat(2,auto)] gap-4 justify-center mb-12 max-w-4xl mx-auto">
           {datasets.map((dataset, index) => (
             <div
               key={dataset.name}
