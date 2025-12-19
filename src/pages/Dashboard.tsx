@@ -5,6 +5,7 @@ import { User, Session } from "@supabase/supabase-js";
 import { useToast } from "@/hooks/use-toast";
 import JSZip from "jszip";
 import { DashboardSidebar } from "@/components/DashboardSidebar";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import DashboardStudio from "./DashboardStudio";
 import DashboardGallery from "./DashboardGallery";
 import DashboardRewards from "./DashboardRewards";
@@ -392,7 +393,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-background flex">
       {/* Sidebar */}
-      <div className="w-64 border-r bg-card">
+      <div className="w-64 border-r border-border">
         <DashboardSidebar
           activeSection={activeSection}
           onSectionChange={setActiveSection}
@@ -401,6 +402,9 @@ export default function Dashboard() {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
+        <header className="sticky top-0 z-10 flex items-center justify-end border-b border-border bg-background/80 px-6 py-3 backdrop-blur">
+          <ThemeToggle />
+        </header>
         {/* Content */}
         <main className="flex-1 p-6">
           {activeSection === "studio" && (

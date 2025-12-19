@@ -46,14 +46,16 @@ export function DashboardSidebar({ className, activeSection, onSectionChange }: 
   };
 
   return (
-    <div className={cn("flex flex-col h-full bg-slate-50 dark:bg-slate-900", className)}>
-      <div className="p-6 bg-slate-100 dark:bg-slate-800">
+    <div className={cn("flex h-full flex-col bg-sidebar text-sidebar-foreground", className)}>
+      <div className="bg-sidebar-accent p-6">
         <div className="flex flex-col">
-          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <img src="/logo.svg" alt="NextMetal logo" className="h-8 w-8" />
-            <span className="font-semibold text-sm">Next Metal</span>
-          </Link>
-          <span className="text-xs text-muted-foreground self-end mt-1 pr-0.5">
+          <div className="flex items-center justify-between mb-2">
+            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <img src="/logo.svg" alt="NextMetal logo" className="h-8 w-8" />
+              <span className="font-semibold text-sm">Next Metal</span>
+            </Link>
+          </div>
+          <span className="text-xs text-muted-foreground self-end pr-0.5">
             Dashboard
           </span>
         </div>
@@ -83,7 +85,7 @@ export function DashboardSidebar({ className, activeSection, onSectionChange }: 
         </div>
       </nav>
 
-      <div className="p-4 border-t">
+      <div className="border-t border-border p-4">
         <Button
           variant="ghost"
           className="w-full justify-start gap-3 h-12 text-muted-foreground hover:text-foreground"

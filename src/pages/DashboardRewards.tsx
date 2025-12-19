@@ -28,7 +28,7 @@ export default function DashboardRewards() {
         </TabsList>
 
         <TabsContent value="league">
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+          <div className="rounded-lg border border-border bg-card p-4">
               {user && (
                 <Step1LinkAccount
                   userId={user.id}

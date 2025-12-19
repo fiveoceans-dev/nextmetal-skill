@@ -239,7 +239,10 @@ export default function DashboardGallery() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {dayRecordings.map((recording) => (
-                  <div key={recording.id} className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors p-4">
+                  <div
+                    key={recording.id}
+                    className="rounded-lg border border-border bg-card p-4 transition-colors hover:bg-accent"
+                  >
                       <div className="aspect-video bg-black rounded mb-3 flex items-center justify-center relative">
                         <FileVideo className="h-8 w-8 text-white/50" />
                         {getStatusBadge(recording.status)}

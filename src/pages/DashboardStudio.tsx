@@ -57,7 +57,7 @@ export default function DashboardStudio({
         <h1 className="text-2xl font-bold">Studio</h1>
       </div>
 
-      <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+      <div className="rounded-lg border border-border bg-card p-4">
         <div className="flex items-center gap-4">
             <Select value={selectedScreen} onValueChange={onSelectedScreenChange}>
               <SelectTrigger className="w-48">
@@ -131,7 +131,7 @@ export default function DashboardStudio({
           )}
         </div>
 
-      <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-4">
+      <div className="rounded-lg bg-muted p-4">
         <div className="relative rounded-lg aspect-video overflow-hidden max-w-2xl mx-auto">
             <canvas
               ref={canvasRef}
@@ -150,7 +150,7 @@ export default function DashboardStudio({
             )}
 
             {!isStreamReady && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-600 text-gray-500 dark:text-gray-400 rounded-lg">
+              <div className="absolute inset-0 flex items-center justify-center rounded-lg bg-background/60 text-muted-foreground">
                 <Monitor className="h-8 w-8" />
               </div>
             )}
@@ -158,9 +158,19 @@ export default function DashboardStudio({
         </div>
 
 
-      <div className={`rounded-lg p-4 ${isRecording && recordingSession ? 'bg-blue-50 dark:bg-blue-900/20' : 'bg-gray-50 dark:bg-gray-800'}`}>
+      <div
+        className={`rounded-lg border border-border p-4 ${
+          isRecording && recordingSession ? 'bg-primary/5' : 'bg-card'
+        }`}
+      >
         <div className="flex items-center gap-2 mb-4">
-          <h3 className={`font-semibold ${isRecording && recordingSession ? 'text-blue-900 dark:text-blue-100' : 'text-gray-700 dark:text-gray-300'}`}>Session Info & Downloads</h3>
+          <h3
+            className={`font-semibold ${
+              isRecording && recordingSession ? 'text-primary' : 'text-foreground'
+            }`}
+          >
+            Session Info & Downloads
+          </h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
@@ -186,8 +196,16 @@ export default function DashboardStudio({
                 </div>
           </div>
         </div>
-        <div className={`mt-4 p-3 rounded-lg ${isRecording && recordingSession ? 'bg-blue-100 dark:bg-blue-900/30' : 'bg-gray-100 dark:bg-gray-700'}`}>
-          <p className={`text-sm ${isRecording && recordingSession ? 'text-blue-800 dark:text-blue-200' : 'text-gray-600 dark:text-gray-400'}`}>
+        <div
+          className={`mt-4 rounded-lg border border-border p-3 ${
+            isRecording && recordingSession ? 'bg-primary/10' : 'bg-muted'
+          }`}
+        >
+          <p
+            className={`text-sm ${
+              isRecording && recordingSession ? 'text-foreground' : 'text-muted-foreground'
+            }`}
+          >
             {isRecording && recordingSession ? (
               <>
                 <strong>AI Training Ready:</strong> ZIP archive will auto-download when recording stops.
