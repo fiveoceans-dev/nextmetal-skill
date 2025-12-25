@@ -1,27 +1,45 @@
 import en from "./locales/en";
 import ko from "./locales/ko";
+import fr from "./locales/fr";
+import de from "./locales/de";
+import esES from "./locales/es-ES";
+import es419 from "./locales/es-419";
+import it from "./locales/it";
+import ptBR from "./locales/pt-BR";
+import ptPT from "./locales/pt-PT";
+import id from "./locales/id";
+import ar from "./locales/ar";
+import ja from "./locales/ja";
+import pl from "./locales/pl";
+import ru from "./locales/ru";
+import zhHans from "./locales/zh-Hans";
+import zhHant from "./locales/zh-Hant";
+import tr from "./locales/tr";
+import uk from "./locales/uk";
+import vi from "./locales/vi";
+import th from "./locales/th";
 
 export const resources = {
   en: { translation: en },
   ko: { translation: ko },
-  ar: { translation: en },
-  fr: { translation: en },
-  de: { translation: en },
-  id: { translation: en },
-  it: { translation: en },
-  ja: { translation: en },
-  pl: { translation: en },
-  "pt-BR": { translation: en },
-  "pt-PT": { translation: en },
-  ru: { translation: en },
-  "zh-Hans": { translation: en },
-  "es-419": { translation: en },
-  "es-ES": { translation: en },
-  th: { translation: en },
-  "zh-Hant": { translation: en },
-  tr: { translation: en },
-  uk: { translation: en },
-  vi: { translation: en },
+  fr: { translation: fr },
+  de: { translation: de },
+  id: { translation: id },
+  it: { translation: it },
+  "es-ES": { translation: esES },
+  "es-419": { translation: es419 },
+  "pt-BR": { translation: ptBR },
+  "pt-PT": { translation: ptPT },
+  ar: { translation: ar },
+  ja: { translation: ja },
+  pl: { translation: pl },
+  ru: { translation: ru },
+  "zh-Hans": { translation: zhHans },
+  "zh-Hant": { translation: zhHant },
+  tr: { translation: tr },
+  uk: { translation: uk },
+  vi: { translation: vi },
+  th: { translation: th },
 };
 
 export const supportedLanguages = Object.keys(resources);

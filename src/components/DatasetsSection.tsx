@@ -130,7 +130,7 @@ export const DatasetsSection = () => {
           {datasets.map((dataset, index) => (
             <div
               key={dataset.name}
-              className="flex flex-col justify-between text-left animate-fade-in-up w-full md:w-[280px] rounded-3xl border border-border/70 bg-background/60 backdrop-blur-sm p-6 shadow-sm transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-xl"
+              className="flex flex-col justify-between text-left animate-fade-in-up w-full md:w-[280px] rounded-3xl border border-border/70 bg-background/60 backdrop-blur-sm p-6 shadow-sm transition-all duration-300 ease-out hover:-translate-y-3 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/15"
               style={{ animationDelay: `${index * 0.1}s`, aspectRatio: "2.5 / 3.5" }}
             >
               <div className="mb-2">

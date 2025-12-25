@@ -56,7 +56,7 @@ export const RewardsSection = () => {
 
           <div className="grid md:grid-cols-3 gap-4 justify-items-center max-w-5xl mx-auto">
             <div
-              className="relative p-6 text-left animate-fade-in-up rounded-3xl border border-slate-300 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 w-full md:w-[280px] flex flex-col justify-between shadow-sm text-black overflow-hidden transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-xl"
+              className="relative p-6 text-left animate-fade-in-up rounded-3xl border border-slate-300 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 w-full md:w-[280px] flex flex-col justify-between shadow-sm text-black overflow-hidden transition-all duration-300 ease-out hover:-translate-y-3 hover:scale-[1.02] hover:shadow-2xl hover:shadow-slate-400/30"
               style={{ animationDelay: '0.05s', aspectRatio: "2.5 / 3.5" }}
             >
               <div className="pointer-events-none absolute -inset-10 rotate-45 bg-gradient-to-r from-white/80 via-white/10 to-white/80 opacity-80" />
@@ -66,7 +66,7 @@ export const RewardsSection = () => {
             </div>
 
             <div
-              className="relative p-6 text-left animate-fade-in-up rounded-3xl border border-amber-400 bg-gradient-to-br from-amber-100 via-amber-200 to-yellow-50 w-full md:w-[280px] flex flex-col justify-between shadow-sm text-black overflow-hidden transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-xl"
+              className="relative p-6 text-left animate-fade-in-up rounded-3xl border border-amber-400 bg-gradient-to-br from-amber-100 via-amber-200 to-yellow-50 w-full md:w-[280px] flex flex-col justify-between shadow-sm text-black overflow-hidden transition-all duration-300 ease-out hover:-translate-y-3 hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-300/40"
               style={{ aspectRatio: "2.5 / 3.5" }}
             >
               <div className="pointer-events-none absolute -inset-10 rotate-45 bg-gradient-to-r from-white/80 via-white/10 to-white/80 opacity-80" />
@@ -76,7 +76,7 @@ export const RewardsSection = () => {
             </div>
 
             <div
-              className="relative p-6 text-left animate-fade-in-up rounded-3xl border border-zinc-300 bg-gradient-to-br from-zinc-100 via-sky-100 to-slate-200 w-full md:w-[280px] flex flex-col justify-between shadow-sm text-black overflow-hidden transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-xl"
+              className="relative p-6 text-left animate-fade-in-up rounded-3xl border border-zinc-300 bg-gradient-to-br from-zinc-100 via-sky-100 to-slate-200 w-full md:w-[280px] flex flex-col justify-between shadow-sm text-black overflow-hidden transition-all duration-300 ease-out hover:-translate-y-3 hover:scale-[1.02] hover:shadow-2xl hover:shadow-sky-300/40"
               style={{ animationDelay: '0.1s', aspectRatio: "2.5 / 3.5" }}
             >
               <div className="pointer-events-none absolute -inset-10 rotate-45 bg-gradient-to-r from-sky-200/80 via-sky-100/10 to-sky-200/80 opacity-80" />
