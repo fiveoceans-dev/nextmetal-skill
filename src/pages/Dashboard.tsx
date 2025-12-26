@@ -6,6 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import JSZip from "jszip";
 import { DashboardSidebar } from "@/components/DashboardSidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import DashboardStudio from "./DashboardStudio";
 import DashboardGallery from "./DashboardGallery";
 import DashboardRewards from "./DashboardRewards";
@@ -404,7 +405,8 @@ export default function Dashboard() {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        <header className="sticky top-0 z-10 flex items-center justify-end border-b border-border bg-background/80 px-6 py-3 backdrop-blur">
+        <header className="sticky top-0 z-10 flex items-center justify-end gap-3 border-b border-border bg-background/80 px-6 py-3 backdrop-blur">
+          <LanguageSwitcher />
           <ThemeToggle />
         </header>
         {/* Content */}

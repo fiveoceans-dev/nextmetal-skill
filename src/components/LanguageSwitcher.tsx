@@ -14,23 +14,27 @@ export const LanguageSwitcher = () => {
     currentOption?.shortLabel ||
     currentOption?.label?.slice(0, 2)?.toUpperCase() ||
     currentLanguage?.toUpperCase();
+  const flag = currentOption?.flag || "🌐";
 
   return (
     <Select value={currentLanguage} onValueChange={(value) => i18n.changeLanguage(value)}>
       <SelectTrigger
         aria-label={t("nav.languageAria")}
-        className="h-10 w-12 justify-center rounded-full border border-border/70 bg-background/60 text-xs font-semibold uppercase tracking-[0.25em] text-foreground/80 hover:text-foreground"
+        className="h-10 w-12 justify-center rounded-full border border-border/70 bg-background/60 text-xs font-semibold uppercase tracking-[0.25em] text-foreground/80 hover:text-foreground [&_svg]:hidden"
       >
         <Globe className="sr-only h-4 w-4" aria-hidden />
         <SelectValue placeholder={t("nav.language")}>
-          <span aria-hidden className="text-sm font-bold">
-            {shortLabel}
+          <span aria-hidden className="text-lg" role="img">
+            {flag}
           </span>
         </SelectValue>
       </SelectTrigger>
       <SelectContent side="bottom" align="end">
         {LANGUAGE_OPTIONS.map((language) => (
           <SelectItem key={language.code} value={language.code}>
+            <span className="mr-2" aria-hidden role="img">
+              {language.flag || "🌐"}
+            </span>
             {language.label}
           </SelectItem>
         ))}
