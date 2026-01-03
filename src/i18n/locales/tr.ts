@@ -48,12 +48,12 @@ const tr = {
   rewards: {
     title: "Ödül kazan",
     subtitlePrefix: "Saatte",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "kazan.",
     tiers: {
-      silver: { label: "Gümüş", rate: "Saatte 10 METAL", description: "Herkes katılıp ödül kazanabilir." },
-      gold: { label: "Altın", rate: "Saatte 25 METAL", description: "Uzun vadeli katkı ve destekçiler için seviye." },
-      platinum: { label: "Platin", rate: "Saatte 50 METAL", description: "Uzmanlar ve profesyonel oyuncular için seviye." },
+      silver: { label: "Gümüş", rate: "Saatte 10 Points", description: "Herkes katılıp ödül kazanabilir." },
+      gold: { label: "Altın", rate: "Saatte 25 Points", description: "Uzun vadeli katkı ve destekçiler için seviye." },
+      platinum: { label: "Platin", rate: "Saatte 50 Points", description: "Uzmanlar ve profesyonel oyuncular için seviye." },
     },
     cta: "Oyna ve kazan",
   },
@@ -219,7 +219,7 @@ const tr = {
     earnings: { thisMonth: "Bu ay", sessions: "Oturumlar" },
     achievements: {
       firstRecording: { title: "İlk kayıt", description: "İlk oyununuzu kaydedin" },
-      champion: { title: "Şampiyon", description: "100 $METAL kazanın" },
+      champion: { title: "Şampiyon", description: "100 Points kazanın" },
     },
   },
   settings: {

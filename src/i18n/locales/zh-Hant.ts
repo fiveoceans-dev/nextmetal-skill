@@ -48,12 +48,12 @@ const zhHant = {
   rewards: {
     title: "獲得獎勵",
     subtitlePrefix: "每小時賺取",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "。",
     tiers: {
-      silver: { label: "白銀", rate: "每小時 10 METAL", description: "任何人都能加入並領取獎勵。" },
-      gold: { label: "黃金", rate: "每小時 25 METAL", description: "長期貢獻者與支持者的等級。" },
-      platinum: { label: "白金", rate: "每小時 50 METAL", description: "專家與職業玩家的等級。" },
+      silver: { label: "白銀", rate: "每小時 10 Points", description: "任何人都能加入並領取獎勵。" },
+      gold: { label: "黃金", rate: "每小時 25 Points", description: "長期貢獻者與支持者的等級。" },
+      platinum: { label: "白金", rate: "每小時 50 Points", description: "專家與職業玩家的等級。" },
     },
     cta: "玩遊戲賺獎勵",
   },
@@ -219,7 +219,7 @@ const zhHant = {
     earnings: { thisMonth: "本月", sessions: "工作階段" },
     achievements: {
       firstRecording: { title: "第一次錄影", description: "錄下你的第一場遊戲" },
-      champion: { title: "冠軍", description: "賺取 100 $METAL" },
+      champion: { title: "冠軍", description: "賺取 100 Points" },
     },
   },
   settings: {

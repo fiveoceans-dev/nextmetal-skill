@@ -48,12 +48,12 @@ const ja = {
   rewards: {
     title: "報酬を手に入れる",
     subtitlePrefix: "毎時間",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "を獲得。",
     tiers: {
-      silver: { label: "シルバー", rate: "1時間あたり10 METAL", description: "誰でも参加して報酬を得られます。" },
-      gold: { label: "ゴールド", rate: "1時間あたり25 METAL", description: "長期の貢献者とサポーター向けのティア。" },
-      platinum: { label: "プラチナ", rate: "1時間あたり50 METAL", description: "エキスパートとプロプレイヤー向け。" },
+      silver: { label: "シルバー", rate: "1時間あたり10 Points", description: "誰でも参加して報酬を得られます。" },
+      gold: { label: "ゴールド", rate: "1時間あたり25 Points", description: "長期の貢献者とサポーター向けのティア。" },
+      platinum: { label: "プラチナ", rate: "1時間あたり50 Points", description: "エキスパートとプロプレイヤー向け。" },
     },
     cta: "遊んで報酬を得る",
   },
@@ -219,7 +219,7 @@ const ja = {
     earnings: { thisMonth: "今月", sessions: "セッション" },
     achievements: {
       firstRecording: { title: "初めての録画", description: "初めてのゲームを録画" },
-      champion: { title: "チャンピオン", description: "100 $METAL を獲得" },
+      champion: { title: "チャンピオン", description: "100 Points を獲得" },
     },
   },
   settings: {

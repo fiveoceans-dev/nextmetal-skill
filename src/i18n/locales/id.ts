@@ -58,22 +58,22 @@ const id = {
   rewards: {
     title: "Dapatkan hadiah",
     subtitlePrefix: "Dapatkan",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "setiap jam bermain.",
     tiers: {
       silver: {
         label: "Perak",
-        rate: "10 METAL per jam",
+        rate: "10 Points per jam",
         description: "Siapa pun bisa ikut dan mendapat hadiah.",
       },
       gold: {
         label: "Emas",
-        rate: "25 METAL per jam",
+        rate: "25 Points per jam",
         description: "Level untuk kontributor jangka panjang dan supporter.",
       },
       platinum: {
         label: "Platina",
-        rate: "50 METAL per jam",
+        rate: "50 Points per jam",
         description: "Level untuk ahli dan pro player.",
       },
     },
@@ -386,7 +386,7 @@ const id = {
       },
       champion: {
         title: "Champion",
-        description: "Dapatkan 100 $METAL",
+        description: "Dapatkan 100 Points",
       },
     },
   },

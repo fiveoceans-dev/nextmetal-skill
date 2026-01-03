@@ -58,22 +58,22 @@ const ko = {
   rewards: {
     title: "보상 받기",
     subtitlePrefix: "플레이한 매 시간마다",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "보상을 받으세요.",
     tiers: {
       silver: {
         label: "실버",
-        rate: "시간당 10 METAL",
+        rate: "시간당 10 Points",
         description: "누구나 참여해 보상을 받을 수 있어요.",
       },
       gold: {
         label: "골드",
-        rate: "시간당 25 METAL",
+        rate: "시간당 25 Points",
         description: "장기 참여자와 서포터를 위한 등급.",
       },
       platinum: {
         label: "플래티넘",
-        rate: "시간당 50 METAL",
+        rate: "시간당 50 Points",
         description: "상급자와 프로 플레이어를 위한 등급.",
       },
     },
@@ -386,7 +386,7 @@ const ko = {
       },
       champion: {
         title: "챔피언",
-        description: "100 $METAL 획득",
+        description: "100 Points 획득",
       },
     },
   },

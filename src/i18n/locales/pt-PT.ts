@@ -58,22 +58,22 @@ const ptPT = {
   rewards: {
     title: "Ganhe recompensas",
     subtitlePrefix: "Ganhe",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "a cada hora jogada.",
     tiers: {
       silver: {
         label: "Prata",
-        rate: "10 METAL por hora",
+        rate: "10 Points por hora",
         description: "Qualquer pessoa pode participar e ganhar recompensas.",
       },
       gold: {
         label: "Ouro",
-        rate: "25 METAL por hora",
+        rate: "25 Points por hora",
         description: "Nível para contribuintes de longo prazo e apoiadores.",
       },
       platinum: {
         label: "Platina",
-        rate: "50 METAL por hora",
+        rate: "50 Points por hora",
         description: "Nível para especialistas e jogadores profissionais.",
       },
     },
@@ -386,7 +386,7 @@ const ptPT = {
       },
       champion: {
         title: "Campeão",
-        description: "Ganhe 100 $METAL",
+        description: "Ganhe 100 Points",
       },
     },
   },

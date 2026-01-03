@@ -48,12 +48,12 @@ const vi = {
   rewards: {
     title: "Nhận phần thưởng",
     subtitlePrefix: "Kiếm",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "mỗi giờ chơi.",
     tiers: {
-      silver: { label: "Bạc", rate: "10 METAL/giờ", description: "Bất kỳ ai cũng có thể tham gia và nhận thưởng." },
-      gold: { label: "Vàng", rate: "25 METAL/giờ", description: "Dành cho cộng tác viên và người ủng hộ lâu dài." },
-      platinum: { label: "Bạch kim", rate: "50 METAL/giờ", description: "Dành cho chuyên gia và tuyển thủ pro." },
+      silver: { label: "Bạc", rate: "10 Points/giờ", description: "Bất kỳ ai cũng có thể tham gia và nhận thưởng." },
+      gold: { label: "Vàng", rate: "25 Points/giờ", description: "Dành cho cộng tác viên và người ủng hộ lâu dài." },
+      platinum: { label: "Bạch kim", rate: "50 Points/giờ", description: "Dành cho chuyên gia và tuyển thủ pro." },
     },
     cta: "Chơi và nhận thưởng",
   },
@@ -219,7 +219,7 @@ const vi = {
     earnings: { thisMonth: "Tháng này", sessions: "Phiên" },
     achievements: {
       firstRecording: { title: "Bản ghi đầu tiên", description: "Ghi lại game đầu tiên của bạn" },
-      champion: { title: "Nhà vô địch", description: "Kiếm 100 $METAL" },
+      champion: { title: "Nhà vô địch", description: "Kiếm 100 Points" },
     },
   },
   settings: {

@@ -58,22 +58,22 @@ const es419 = {
   rewards: {
     title: "Recibe recompensas",
     subtitlePrefix: "Gana",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "por cada hora de juego.",
     tiers: {
       silver: {
         label: "Plata",
-        rate: "10 METAL por hora",
+        rate: "10 Points por hora",
         description: "Cualquiera puede participar y ganar recompensas.",
       },
       gold: {
         label: "Oro",
-        rate: "25 METAL por hora",
+        rate: "25 Points por hora",
         description: "Nivel para contribuyentes a largo plazo y supporters.",
       },
       platinum: {
         label: "Platino",
-        rate: "50 METAL por hora",
+        rate: "50 Points por hora",
         description: "Nivel para expertos y jugadores profesionales.",
       },
     },
@@ -386,7 +386,7 @@ const es419 = {
       },
       champion: {
         title: "Campeón",
-        description: "Gana 100 $METAL",
+        description: "Gana 100 Points",
       },
     },
   },

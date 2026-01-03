@@ -48,12 +48,12 @@ const ru = {
   rewards: {
     title: "Получай награды",
     subtitlePrefix: "Зарабатывай",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "за каждый час игры.",
     tiers: {
-      silver: { label: "Серебро", rate: "10 METAL в час", description: "Любой может присоединиться и получать награды." },
-      gold: { label: "Золото", rate: "25 METAL в час", description: "Уровень для долгосрочных участников и поддерживающих." },
-      platinum: { label: "Платина", rate: "50 METAL в час", description: "Уровень для экспертов и профессионалов." },
+      silver: { label: "Серебро", rate: "10 Points в час", description: "Любой может присоединиться и получать награды." },
+      gold: { label: "Золото", rate: "25 Points в час", description: "Уровень для долгосрочных участников и поддерживающих." },
+      platinum: { label: "Платина", rate: "50 Points в час", description: "Уровень для экспертов и профессионалов." },
     },
     cta: "Играть и зарабатывать",
   },
@@ -219,7 +219,7 @@ const ru = {
     earnings: { thisMonth: "В этом месяце", sessions: "Сессии" },
     achievements: {
       firstRecording: { title: "Первая запись", description: "Запишите свою первую игру" },
-      champion: { title: "Чемпион", description: "Заработайте 100 $METAL" },
+      champion: { title: "Чемпион", description: "Заработайте 100 Points" },
     },
   },
   settings: {

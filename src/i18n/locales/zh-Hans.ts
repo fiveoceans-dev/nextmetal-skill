@@ -48,12 +48,12 @@ const zhHans = {
   rewards: {
     title: "获取奖励",
     subtitlePrefix: "每小时赚取",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "。",
     tiers: {
-      silver: { label: "白银", rate: "每小时 10 METAL", description: "任何人都可以加入并获得奖励。" },
-      gold: { label: "黄金", rate: "每小时 25 METAL", description: "长期贡献者和支持者的等级。" },
-      platinum: { label: "白金", rate: "每小时 50 METAL", description: "专家和职业玩家的等级。" },
+      silver: { label: "白银", rate: "每小时 10 Points", description: "任何人都可以加入并获得奖励。" },
+      gold: { label: "黄金", rate: "每小时 25 Points", description: "长期贡献者和支持者的等级。" },
+      platinum: { label: "白金", rate: "每小时 50 Points", description: "专家和职业玩家的等级。" },
     },
     cta: "玩游戏赚奖励",
   },
@@ -219,7 +219,7 @@ const zhHans = {
     earnings: { thisMonth: "本月", sessions: "会话" },
     achievements: {
       firstRecording: { title: "首次录制", description: "录制你的第一局游戏" },
-      champion: { title: "冠军", description: "赚取 100 $METAL" },
+      champion: { title: "冠军", description: "赚取 100 Points" },
     },
   },
   settings: {

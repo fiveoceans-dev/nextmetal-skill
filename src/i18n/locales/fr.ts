@@ -58,22 +58,22 @@ const fr = {
   rewards: {
     title: "Recevoir des récompenses",
     subtitlePrefix: "Gagnez",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "pour chaque heure de jeu.",
     tiers: {
       silver: {
         label: "Argent",
-        rate: "10 METAL par heure",
+        rate: "10 Points par heure",
         description: "Tout le monde peut participer et gagner des récompenses.",
       },
       gold: {
         label: "Or",
-        rate: "25 METAL par heure",
+        rate: "25 Points par heure",
         description: "Un niveau pour les contributeurs et soutiens de long terme.",
       },
       platinum: {
         label: "Platine",
-        rate: "50 METAL par heure",
+        rate: "50 Points par heure",
         description: "Un niveau pour les experts et les joueurs pro.",
       },
     },
@@ -386,7 +386,7 @@ const fr = {
       },
       champion: {
         title: "Champion",
-        description: "Gagner 100 $METAL",
+        description: "Gagner 100 Points",
       },
     },
   },

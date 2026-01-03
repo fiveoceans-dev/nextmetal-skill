@@ -48,12 +48,12 @@ const uk = {
   rewards: {
     title: "Отримуй винагороди",
     subtitlePrefix: "Заробляй",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "за кожну годину гри.",
     tiers: {
-      silver: { label: "Срібло", rate: "10 METAL за годину", description: "Будь-хто може долучитись та отримувати винагороди." },
-      gold: { label: "Золото", rate: "25 METAL за годину", description: "Рівень для довгострокових учасників та підтримки." },
-      platinum: { label: "Платина", rate: "50 METAL за годину", description: "Рівень для експертів та професійних гравців." },
+      silver: { label: "Срібло", rate: "10 Points за годину", description: "Будь-хто може долучитись та отримувати винагороди." },
+      gold: { label: "Золото", rate: "25 Points за годину", description: "Рівень для довгострокових учасників та підтримки." },
+      platinum: { label: "Платина", rate: "50 Points за годину", description: "Рівень для експертів та професійних гравців." },
     },
     cta: "Грати та заробляти",
   },
@@ -219,7 +219,7 @@ const uk = {
     earnings: { thisMonth: "Цього місяця", sessions: "Сесії" },
     achievements: {
       firstRecording: { title: "Перша запис", description: "Запишіть свою першу гру" },
-      champion: { title: "Чемпіон", description: "Заробіть 100 $METAL" },
+      champion: { title: "Чемпіон", description: "Заробіть 100 Points" },
     },
   },
   settings: {

@@ -48,12 +48,12 @@ const pl = {
   rewards: {
     title: "Otrzymuj nagrody",
     subtitlePrefix: "Zarabiaj",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "za każdą godzinę gry.",
     tiers: {
-      silver: { label: "Srebro", rate: "10 METAL za godzinę", description: "Każdy może dołączyć i zdobywać nagrody." },
-      gold: { label: "Złoto", rate: "25 METAL za godzinę", description: "Poziom dla długoterminowych współtwórców i wspierających." },
-      platinum: { label: "Platyna", rate: "50 METAL za godzinę", description: "Poziom dla ekspertów i graczy zawodowych." },
+      silver: { label: "Srebro", rate: "10 Points za godzinę", description: "Każdy może dołączyć i zdobywać nagrody." },
+      gold: { label: "Złoto", rate: "25 Points za godzinę", description: "Poziom dla długoterminowych współtwórców i wspierających." },
+      platinum: { label: "Platyna", rate: "50 Points za godzinę", description: "Poziom dla ekspertów i graczy zawodowych." },
     },
     cta: "Graj i zarabiaj",
   },
@@ -219,7 +219,7 @@ const pl = {
     earnings: { thisMonth: "W tym miesiącu", sessions: "Sesje" },
     achievements: {
       firstRecording: { title: "Pierwsze nagranie", description: "Nagraj swoją pierwszą grę" },
-      champion: { title: "Mistrz", description: "Zdobądź 100 $METAL" },
+      champion: { title: "Mistrz", description: "Zdobądź 100 Points" },
     },
   },
   settings: {

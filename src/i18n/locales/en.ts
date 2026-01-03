@@ -58,22 +58,22 @@ const en = {
   rewards: {
     title: "Get rewarded",
     subtitlePrefix: "Earn",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "for every hour you play.",
     tiers: {
       silver: {
         label: "Silver",
-        rate: "10 METAL per hour",
+        rate: "10 Points per hour",
         description: "Anyone can join and earn rewards.",
       },
       gold: {
         label: "Gold",
-        rate: "25 METAL per hour",
+        rate: "25 Points per hour",
         description: "A tier for long-term contributors and supporters.",
       },
       platinum: {
         label: "Platinum",
-        rate: "50 METAL per hour",
+        rate: "50 Points per hour",
         description: "A tier for experts and pro players.",
       },
     },
@@ -390,7 +390,7 @@ const en = {
       },
       champion: {
         title: "Champion",
-        description: "Earn 100 $METAL",
+        description: "Earn 100 Points",
       },
     },
   },

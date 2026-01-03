@@ -48,12 +48,12 @@ const th = {
   rewards: {
     title: "รับรางวัล",
     subtitlePrefix: "รับ",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "ทุกชั่วโมงที่เล่น",
     tiers: {
-      silver: { label: "ซิลเวอร์", rate: "10 METAL ต่อชั่วโมง", description: "ทุกคนเข้าร่วมและรับรางวัลได้" },
-      gold: { label: "โกลด์", rate: "25 METAL ต่อชั่วโมง", description: "ระดับสำหรับผู้สนับสนุนและผู้มีส่วนร่วมระยะยาว" },
-      platinum: { label: "แพลตตินัม", rate: "50 METAL ต่อชั่วโมง", description: "ระดับสำหรับผู้เชี่ยวชาญและโปรเพลเยอร์" },
+      silver: { label: "ซิลเวอร์", rate: "10 Points ต่อชั่วโมง", description: "ทุกคนเข้าร่วมและรับรางวัลได้" },
+      gold: { label: "โกลด์", rate: "25 Points ต่อชั่วโมง", description: "ระดับสำหรับผู้สนับสนุนและผู้มีส่วนร่วมระยะยาว" },
+      platinum: { label: "แพลตตินัม", rate: "50 Points ต่อชั่วโมง", description: "ระดับสำหรับผู้เชี่ยวชาญและโปรเพลเยอร์" },
     },
     cta: "เล่นและรับรางวัล",
   },
@@ -219,7 +219,7 @@ const th = {
     earnings: { thisMonth: "เดือนนี้", sessions: "เซสชัน" },
     achievements: {
       firstRecording: { title: "บันทึกครั้งแรก", description: "บันทึกเกมแรกของคุณ" },
-      champion: { title: "แชมป์เปี้ยน", description: "รับ 100 $METAL" },
+      champion: { title: "แชมป์เปี้ยน", description: "รับ 100 Points" },
     },
   },
   settings: {

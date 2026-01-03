@@ -48,12 +48,12 @@ const ar = {
   rewards: {
     title: "احصل على مكافآت",
     subtitlePrefix: "اكسب",
-    token: "$METAL",
+    token: "Points",
     subtitleSuffix: "عن كل ساعة لعب.",
     tiers: {
-      silver: { label: "فضي", rate: "10 METAL في الساعة", description: "الجميع يمكنه المشاركة وكسب المكافآت." },
-      gold: { label: "ذهبي", rate: "25 METAL في الساعة", description: "مستوى للمساهمين والداعمين على المدى الطويل." },
-      platinum: { label: "بلاتيني", rate: "50 METAL في الساعة", description: "مستوى للخبراء واللاعبين المحترفين." },
+      silver: { label: "فضي", rate: "10 Points في الساعة", description: "الجميع يمكنه المشاركة وكسب المكافآت." },
+      gold: { label: "ذهبي", rate: "25 Points في الساعة", description: "مستوى للمساهمين والداعمين على المدى الطويل." },
+      platinum: { label: "بلاتيني", rate: "50 Points في الساعة", description: "مستوى للخبراء واللاعبين المحترفين." },
     },
     cta: "العب واحصل على المكافآت",
   },
@@ -219,7 +219,7 @@ const ar = {
     earnings: { thisMonth: "هذا الشهر", sessions: "الجلسات" },
     achievements: {
       firstRecording: { title: "أول تسجيل", description: "سجل لعبتك الأولى" },
-      champion: { title: "البطل", description: "اكسب 100 $METAL" },
+      champion: { title: "البطل", description: "اكسب 100 Points" },
     },
   },
   settings: {
